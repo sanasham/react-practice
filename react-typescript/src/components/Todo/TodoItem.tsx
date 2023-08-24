@@ -1,9 +1,13 @@
 import React from 'react';
+import './style.css';
+interface ITodoProps {
+  title: string;
+}
 
-const TodoItem: React.FC = () => {
+const TodoItem: React.FC<ITodoProps> = (props) => {
   return (
     <div>
-      <li>i am code</li>
+      <li>{props.title}</li>
     </div>
   );
 };
