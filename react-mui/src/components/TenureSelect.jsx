@@ -1,0 +1,43 @@
+import * as React from "react";
+
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { PropTypes } from "prop-types";
+
+const TenureSelect = ({ data, setData }) => {
+  const handleChange = (event) => {
+    setData({ ...data, loanTerm: event.target.value });
+  };
+  return (
+    <>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Tenure</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={data.loanTerm}
+          label="Tenure"
+          onChange={handleChange}
+        >
+          <MenuItem value={5}>5 years</MenuItem>
+          <MenuItem value={10}>10 years</MenuItem>
+          <MenuItem value={15}>15 years</MenuItem>
+          <MenuItem value={20}>20 years</MenuItem>
+        </Select>
+      </FormControl>
+    </>
+  );
+};
+TenureSelect.propTypes = {
+  data: PropTypes.shape({
+    homeValue: PropTypes.number.isRequired,
+    downPayment: PropTypes.number.isRequired,
+    loanAmount: PropTypes.number.isRequired,
+    loanTerm: PropTypes.number.isRequired,
+    interestRate: PropTypes.number.isRequired,
+  }).isRequired,
+  setData: PropTypes.func.isRequired,
+};
+export default TenureSelect;
