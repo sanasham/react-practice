@@ -1,0 +1,5 @@
+function add(num1, num2) {
+  return num1 + num2;
+}
+var value = add(4, 9);
+console.log(value); // 13
