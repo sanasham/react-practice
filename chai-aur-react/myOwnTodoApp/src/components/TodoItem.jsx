@@ -1,7 +1,7 @@
 import React from "react";
 
-function TodoItem() {
-  return <div>item</div>;
+function TodoItem({ task }) {
+  return <div>{task}</div>;
 }
 
 export default TodoItem;
