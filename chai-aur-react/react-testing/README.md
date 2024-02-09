@@ -124,3 +124,10 @@ import { describe, expect, it } from "vitest";
 under src folder create utils folder --> create test-utils.tsx file
 **follow this link**
 https://github.com/vitest-dev/vitest/blob/main/examples/react-testing-lib/src/utils/test-utils.tsx
+
+#MSW Means it uses Mocking react project api calls
+npm install -D msw
+
+# follow these things https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib-msw
+
+# go and create folder under src with the name mocks
