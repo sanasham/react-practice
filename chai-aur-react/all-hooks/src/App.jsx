@@ -1,6 +1,7 @@
 import "./App.css";
 import UseReducerComponent from "./hooks/UseReducerComponent";
 import UseReducer1 from "./hooks/UseReducer1";
+import UseMemoComponet from "./hooks/UseMemoComponet";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <UseReducer1 />
+
+      <p className="read-the-docs">below use Memo</p>
+      <UseMemoComponet />
     </>
   );
 }
