@@ -1,12 +1,13 @@
 import "./App.css";
-import UseReducerComponent from "./hooks/UseReducerComponent";
-import UseReducer1 from "./hooks/UseReducer1";
-import UseMemoComponet from "./hooks/UseMemoComponet";
+// import UseReducerComponent from "./hooks/UseReducerComponent";
+// import UseReducer1 from "./hooks/UseReducer1";
+// import UseMemoComponet from "./hooks/UseMemoComponet";
+import UseMemo from "./hooks/UseMemo";
 
 function App() {
   return (
     <>
-      <div>
+      {/* <div>
         <UseReducerComponent />
       </div>
       <p className="read-the-docs">
@@ -15,7 +16,8 @@ function App() {
       <UseReducer1 />
 
       <p className="read-the-docs">below use Memo</p>
-      <UseMemoComponet />
+      <UseMemoComponet /> */}
+      <UseMemo />
     </>
   );
 }
