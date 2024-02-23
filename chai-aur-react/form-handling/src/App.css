@@ -1,0 +1,51 @@
+.about {
+  background-color: skyblue;
+}
+.services {
+  display: flex;
+  gap: 1rem;
+  margin-top: 20px;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+
+.items {
+  display: flex;
+  gap: 1rem;
+  margin-top: 20px;
+}
+.box-item {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
+.nav {
+  display: flex;
+  width: 100%;
+  height: 4vh;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  display: flex;
+  gap: 2rem;
+}
+li {
+  list-style-type: none;
+  cursor: pointer;
+}
+.link {
+  text-decoration: none;
+}
+.internal {
+  display: flex;
+  gap: 2rem;
+  color: red;
+}
+.useRef {
+  width: 100%;
+  height: 10vh;
+}
