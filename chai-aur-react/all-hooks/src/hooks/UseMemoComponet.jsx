@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 function UseMemoComponet() {
   const [inputValue, setInputValue] = useState("");
+  const [doubleValue, setDoubleValue] = useState("");
+
   const handleTheme = () => {};
 
   return (
