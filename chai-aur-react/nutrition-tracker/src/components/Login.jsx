@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 
 function Login() {
   const [userCreds, setUserCreds] = useState({ email: "", password: "" });
@@ -8,6 +9,10 @@ function Login() {
     text: "Dummy msg",
   });
   const navigate = useNavigate();
+  const loggedInData = useContext(UserContext);
+  useEffect(() => {
+    console.log(loggedInData);
+  });
   const handleInputs = (event) => {
     setUserCreds((prev) => ({
       ...prev,
@@ -23,7 +28,6 @@ function Login() {
       headers: { "content-type": "application/json" },
     })
       .then((response) => {
-        console.log(response);
         if (response.status === 404) {
           setMessage({
             type: "error",
@@ -44,6 +48,7 @@ function Login() {
         console.log(data);
         if (data.token !== undefined) {
           localStorage.setItem("nutrify", JSON.stringify(data));
+          loggedInData.setLoggedUser(data);
           navigate("/track");
         }
       })
