@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Register() {
@@ -7,6 +7,11 @@ function Register() {
     email: "",
     password: "",
     age: "",
+  });
+
+  const [message, setMessage] = useState({
+    type: "invisibility-msg",
+    text: "Dummy msg",
   });
 
   const handleInput = (event) => {
@@ -26,7 +31,22 @@ function Register() {
         "content-type": "application/json",
       },
     })
-      .then(() => console.log(Response))
+      .then((Response) => Response.json())
+      .then((data) => {
+        setMessage({ type: "success", text: data.message });
+        setUserDetails({
+          name: "",
+          email: "",
+          password: "",
+          age: "",
+        });
+        setTimeout(() => {
+          setMessage({
+            type: "invisibility-msg",
+            text: "Dummy msg",
+          });
+        }, 5000);
+      })
       .catch((err) => console.log(err));
   };
   return (
@@ -73,6 +93,7 @@ function Register() {
           <p>
             Already Registered ? <Link to="/login">Login</Link>
           </p>
+          <p className={message.type}>{message.text}</p>
         </form>
       </section>
     </div>

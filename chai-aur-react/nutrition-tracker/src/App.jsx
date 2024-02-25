@@ -3,6 +3,7 @@ import "./App.css";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import PageNotFound from "./components/PageNotFound";
+import Track from "./components/Track";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/track" element={<Track />} />
+
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
