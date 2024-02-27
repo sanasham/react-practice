@@ -75,3 +75,22 @@
   border-radius: 5px;
   opacity: 1;
 }
+
+/* track page css */
+
+.search {
+}
+
+.track-container {
+  align-items: flex-start;
+}
+.search input {
+  width: 100%;
+  height: 45px;
+  text-indent: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding: 10px 0px;
+  font-size: 18px;
+}

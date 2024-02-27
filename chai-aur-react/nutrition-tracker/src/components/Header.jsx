@@ -8,7 +8,7 @@ export default function Header() {
 
   const logout = () => {
     localStorage.removeItem("nutrify");
-    loggedData.setLoggedInUser(null);
+    loggedData.setLoggedUser(null);
     navigate("/login");
   };
 

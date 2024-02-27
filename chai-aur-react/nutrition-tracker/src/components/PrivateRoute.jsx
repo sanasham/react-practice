@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 function PrivateRoute(props) {
   const loggedData = useContext(UserContext);
-  console.log("Private", loggedData);
+  // console.log("Private", loggedData);
   return loggedData.loggedInUser !== null ? (
     <props.Component />
   ) : (

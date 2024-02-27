@@ -12,7 +12,7 @@ function App() {
   const [loggedUser, setLoggedUser] = useState(
     JSON.parse(localStorage.getItem("nutrify"))
   );
-  console.log("logged in user", loggedUser);
+  // console.log("logged in user", loggedUser);
   return (
     <UserContext.Provider value={{ loggedUser, setLoggedUser }}>
       <BrowserRouter>
@@ -20,7 +20,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path='/track' element={<PrivateRoute Component={Track}/>}/>
+          <Route path="/track" element={<PrivateRoute Component={Track} />} />
 
           <Route path="*" element={<PageNotFound />} />
         </Routes>
