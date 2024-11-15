@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Card from "./components/Card.jsx";
 import NewButton from "./components/NewButton.jsx";
 import MYParent from "./stateLifting/MYParent.jsx";
@@ -9,17 +9,87 @@ import CustomUseEffect from "./eventHandlers/customUseEffect/CustomUseEffect.jsx
 import TodosList from "./ApiCalls/TodosList.jsx";
 import ChildA from "./context/ChildA.jsx";
 import NewContext from "./context/NewContext.js";
-import ThemeContext from "./context/ThemeContext.js";
 import "../src/App.css";
+import CombinedProvider, {
+  UserContext,
+  ThemeContext,
+} from "./context/CombinedProvider.jsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Router/Home.jsx";
+import Abount from "./Router/Abount.jsx";
+import Dashboard from "./Router/Dashboard.jsx";
+import NotFound from "./Router/NotFound.jsx";
+import NavigationBar from "./Router/NavigationBar.jsx";
+import ParamCompo from "./Router/ParamCompo.jsx";
+import Courses from "./Router/Courses.jsx";
+import MockTest from "./Router/MockTest.jsx";
+import Reports from "./Router/Reports.jsx";
 function App() {
-  const [user, setUser] = useState({ name: "Diya", age: 5 });
-  const [theme, setTheme] = useState("light");
+  // const [user, setUser] = useState({ name: "Diya", age: 5 });
+  // const [theme, setTheme] = useState("light");
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <div>
+          <NavigationBar />
+          <Home />
+        </div>
+      ),
+    },
+    {
+      path: "/about",
+      element: (
+        <div>
+          <NavigationBar />
+          <Abount />
+        </div>
+      ),
+    },
+    {
+      path: "/dashboard",
+      element: (
+        <div>
+          <NavigationBar />
+          <Dashboard />
+        </div>
+      ),
+      children: [
+        {
+          path: "courses",
+          element: <Courses />,
+        },
+        {
+          path: "mocktest",
+          element: <MockTest />,
+        },
+        {
+          path: "reports",
+          element: <Reports />,
+        },
+      ],
+    },
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+    {
+      path: "/student/:id",
+      element: (
+        <div>
+          <NavigationBar />
+          <ParamCompo />
+        </div>
+      ),
+    },
+  ]);
 
   return (
     <>
       {/* <Test /> */}
       {/* <CustomUseEffect /> */}
-      <ThemeContext.Provider value={{ theme, setTheme }}>
+      {/* <ThemeContext.Provider value={{ theme, setTheme }}>
         <NewContext.Provider value={{ user, setUser }}>
           <div
             style={{
@@ -30,9 +100,12 @@ function App() {
             <ChildA />
           </div>
         </NewContext.Provider>
-      </ThemeContext.Provider>
-
+      </ThemeContext.Provider> */}
       {/* <TodosList /> */}
+      {/* <CombinedProvider>
+        <ChildA />
+      </CombinedProvider> */}
+      <RouterProvider router={router} />
     </>
   );
   // if (isLoggedIn) {

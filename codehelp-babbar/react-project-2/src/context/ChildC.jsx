@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import UserContext from "./NewContext.js";
-import ThemeContext from "./ThemeContext.js";
+import { ThemeContext } from "./CombinedProvider";
 
 const ChildC = () => {
-  const { user, setUser } = useContext(UserContext);
+  //const { user, setUser } = useContext(UserContext);
 
   const { theme, setTheme } = useContext(ThemeContext);
   return (
@@ -11,7 +10,7 @@ const ChildC = () => {
       Child C
       <br />
       <hr />
-      <p>{user.name}</p>
+      {/* <p>{user.name}</p> */}
       {/* <input
         type="text"
         onChange={(e) => setUser({ ...user, name: e.target.value })}

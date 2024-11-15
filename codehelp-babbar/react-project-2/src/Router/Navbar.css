@@ -1,0 +1,27 @@
+.container {
+  margin: 5px;
+}
+
+.container ul {
+  display: flex;
+  justify-content: space-around;
+}
+.container ul li {
+  color: whitesmoke;
+  justify-content: space-around;
+  list-style-type: none;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.active-link {
+  color: red;
+  font-weight: bold;
+}
+
+.inactive-link {
+  color: black;
+}
