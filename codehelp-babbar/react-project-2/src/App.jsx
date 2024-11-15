@@ -24,6 +24,7 @@ import ParamCompo from "./Router/ParamCompo.jsx";
 import Courses from "./Router/Courses.jsx";
 import MockTest from "./Router/MockTest.jsx";
 import Reports from "./Router/Reports.jsx";
+import FirstForm from "./React-hook-form/FirstForm.jsx";
 function App() {
   // const [user, setUser] = useState({ name: "Diya", age: 5 });
   // const [theme, setTheme] = useState("light");
@@ -105,7 +106,8 @@ function App() {
       {/* <CombinedProvider>
         <ChildA />
       </CombinedProvider> */}
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
+      <FirstForm />
     </>
   );
   // if (isLoggedIn) {
@@ -149,6 +151,7 @@ function App() {
   }
 
   {
+    router;
     /* <Card>
         <h1>Best web developer</h1>
         <p>This is paragraph</p>
