@@ -14,13 +14,11 @@ const TaskList: React.FC<Props> = ({ todos, setTodos }) => {
     );
   };
   const handleDelete = (id: number) => {
-    console.log("delete clicked");
     if (id) {
       setTodos((prev) => prev.filter((item) => item.id !== id));
     }
   };
   const handleToggleDone = (id: number) => {
-    console.log("toggle clicked");
     setTodos((prev) =>
       prev.map((item) =>
         item.id === id ? { ...item, isDone: !item.isDone } : item

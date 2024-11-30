@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./TaskListItem.css";
 import { Todo } from "./utility/model.ts";
 import { AiFillEdit } from "react-icons/ai";
@@ -21,6 +21,10 @@ const TaskListItem: React.FC<Props> = ({
 }) => {
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [newTask, setNewTask] = useState<string>(item.todo);
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, [isEditing]);
 
   const handleSave = () => {
     if (newTask.trim()) {
@@ -33,6 +37,7 @@ const TaskListItem: React.FC<Props> = ({
     <div className={`item ${item.isDone ? "done" : ""}`}>
       {isEditing ? (
         <input
+          ref={inputRef}
           key={item.id}
           type="text"
           value={newTask}
