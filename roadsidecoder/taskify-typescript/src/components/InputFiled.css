@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  width: 90%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  padding: 1.2rem;
+  border-radius: 1.5rem;
+  border: none;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1) inset;
+  font-size: 1rem;
+  position: relative;
+  width: 100%;
+  transition: 0.2s;
+}
+input:focus {
+  box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+button {
+  position: absolute;
+  right: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  background-color: #2f74c0;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  transition: 0.2s all;
+}
+button:hover {
+  background-color: #388ae2;
+}
+button:active {
+  transform: scale(0.8);
+  box-shadow: 0 0 5px black;
+}

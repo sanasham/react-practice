@@ -1,0 +1,26 @@
+.item {
+  height: 4rem;
+  background-color: blueviolet;
+  max-width: 100rem;
+  margin-left: 2rem;
+  margin-right: 7rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.icon {
+  padding: 1rem;
+  background-color: red;
+  cursor: pointer;
+}
+.item.done {
+  text-decoration: line-through;
+  color: gray;
+}
