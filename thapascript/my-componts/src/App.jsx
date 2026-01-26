@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import './App.css';
-import MoviesComponent from './components/MoviesComponent';
+import FindUser from './components/FindUser';
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -23,8 +23,10 @@ function App() {
         >
           Increment
         </button> */}
-      <MoviesComponent />
+      {/* <MoviesComponent /> */}
       {/* </div> */}
+      {/* <Colorizer /> */}
+      <FindUser />
     </>
   );
 }
