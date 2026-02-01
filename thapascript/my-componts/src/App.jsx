@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import './App.css';
-import FindUser from './components/FindUser';
+import UseMemo from './components/hooks/UseMemo';
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -26,7 +26,12 @@ function App() {
       {/* <MoviesComponent /> */}
       {/* </div> */}
       {/* <Colorizer /> */}
-      <FindUser />
+      {/* <FindUser /> */}
+      {/* <UseRef /> */}
+      {/* <UseRef1 /> */}
+      {/* <Parent /> */}
+      {/* <UseCallback /> */}
+      <UseMemo />
     </>
   );
 }
