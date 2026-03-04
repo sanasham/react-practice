@@ -1,4 +1,6 @@
 import React from 'react';
+import GrandDaughter from './GrandDaughter';
+import GrandSon from './GrandSon';
 const Child = ({ header }) => {
   console.log('child rendered');
   return (
@@ -10,6 +12,8 @@ const Child = ({ header }) => {
         ipsum eu dignissim lacinia, nisi nisl aliquam eros, eget aliquet nunc
         nisl eu urna.
       </p>
+      <GrandSon />
+      <GrandDaughter />
     </div>
   );
 };

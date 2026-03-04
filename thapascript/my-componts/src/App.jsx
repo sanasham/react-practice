@@ -1,6 +1,17 @@
 // import { useState } from 'react';
 import './App.css';
-import UseMemo from './components/hooks/UseMemo';
+import { FamilyContext } from './components/family/FamilyContext';
+import Parent from './components/family/Parent';
+
+const familySecret = {
+  familyName: 'Sayyed',
+  onlyParentCanSee: () => {
+    return 'This is a family secret!';
+  },
+  onlyGrandChildShouldKnow: () => {
+    return 'This is a grand child secret!';
+  },
+};
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -9,7 +20,7 @@ function App() {
   // };
 
   return (
-    <>
+    <FamilyContext.Provider value={familySecret}>
       {/* <div className='flex  items-start justify-center min-h-screen gap-4 pt-16'>
         <h1 className='text-2xl sm:text-3xl font-bold underline text-center'>
           Hello world!
@@ -29,10 +40,10 @@ function App() {
       {/* <FindUser /> */}
       {/* <UseRef /> */}
       {/* <UseRef1 /> */}
-      {/* <Parent /> */}
+      <Parent />
       {/* <UseCallback /> */}
-      <UseMemo />
-    </>
+      {/* <UseMemo /> */}
+    </FamilyContext.Provider>
   );
 }
 
